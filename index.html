@@ -1,0 +1,111 @@
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio ・ Home</title>
+  <link rel="stylesheet" href="styles/general.css" />
+  <link rel="shortcut icon" href="./assets/icons/home.png" type="image/x-icon">
+</head>
+
+<body>
+  <section>
+    <div id="home" class="page active">
+      <div class="container">
+        <header>
+          <a href="#" class="logo">Meu Portfólio</a>
+          <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#" onclick="showPage('conhecimentos')">Sobre mim</a></li>
+            <li><a href="#" onclick="showPage('clientes')">Clientes</a></li>
+          </ul>
+        </header>
+        <div class="content">
+          <h2>Olá! Eu sou o Guimts <img class="waving" src="./assets/icons/waving.gif" /></h2>
+          <p>Possuo conhecimentos na área tecnologica, com uma atenção maior em Ciência da Computação. Atualmente sou
+            desenvolvedor de bots de discord e outras coisas. Não tenho nenhuma formação ainda, porém, pretendo me
+            especializar na Unicamp, em Ciência da Computação</p>
+          <button class="email" onclick="window.open('mailto:mtsguilherme991@gmail.com')">Email</button>
+        </div>
+        <div class="image">
+          <img src="./assets/Guimts.jpg" />
+        </div>
+        <div class="contatos">
+          <img class="git" src="./assets/icons/github.png" alt="github"
+            onclick="window.open('https://github.com/Guimts16')">
+          <img class="instagram" src="./assets/icons/instagram.png" alt="insta"
+            onclick="window.open('https://www.instagram.com/_guihmts_/')">
+          <img class="discord" src="./assets/icons/discord.png" alt="discord"
+            onclick="window.open('https://discord.com/channels/@guimts/')">
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="conhecimentos" class="page">
+      <div class="container">
+        <header>
+          <a href="#" class="logo">Meu Portfólio</a>
+          <ul>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" class="active">Sobre mim</a></li>
+            <li><a href="#" onclick="showPage('clientes')">Clientes</a></li>
+          </ul>
+        </header>
+        <div class="content">
+          <h2>Sobre mim</h2>
+          <p>
+            - 🌱 Atualmente sou desenvolvedor <strong>JavaScript</strong>.
+            <br>
+            <br>
+            - ✨ Tenho um grande interesse em desenvolver Bots de discord.
+            <br>
+            <br>
+            - 💡 Sempre em busca de aprender novas tecnologias e aprimorar minhas habilidades.
+            <br>
+            <br>
+            - 💥 Gosto muito do Discord!
+          </p>
+        </div>
+        <div>
+          <img class="dc_presence"
+            src="https://lanyard.kyrie25.me/api/617362818299199498?imgStyle=square&imgBorderRadius=500px" alt="discord">
+        </div>
+      </div>
+    </div>
+    <div id="clientes" class="page">
+      <div class="container">
+        <header>
+          <a href="#" class="logo">Meu Portfólio</a>
+          <ul>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('conhecimentos')">Sobre mim</a></li>
+            <li><a href="#" class="active">Clientes</a></li>
+          </ul>
+        </header>
+        <div class="content">
+          <h2>Clientes</h2>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="https://cdn.discordapp.com/avatars/1207008367932084275/d5e990d25c6325f91d2d43bcc7533d82.png?size=2048"
+                  alt="AthenaBot" style="width:200;height:200px;">
+              </div>
+              <div class="flip-card-back">
+                <h1>Athena</h1>
+                <p>Bot em JavaScript</p>
+                <br>
+                <p>Bot criado com a intenção de moderar o servidor SpartaMC (Comunidade de Minecraft).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </section>
+  <script src="scripts/nav.js"></script>
+</body>
+
+</html>
