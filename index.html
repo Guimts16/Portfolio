@@ -5,8 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio - Guimts</title>
   <link rel="stylesheet" href="./styles/general.css">
+  <script>
+    function virado(element) {
+      element.classList.toggle('virado');
+    }    
+  </script>
 </head>
 <body>
+  <div class="container">
+
   <nav class="navbar">
     <ul>
       <li><a href="#home">Início</a></li>
@@ -19,50 +26,47 @@
 
   <section id="home" class="intro">
     <div class="intro-text">
-      <img src="https://cdn.discordapp.com/avatars/617362818299199498/1797b33d2ade483715511038004086b0.png">
+      <img src="https://media1.tenor.com/m/yKqSufoIOHYAAAAd/cat-black-cat.gif">
       <h1>Bem-vindo(a), meu nome é Guilherme</h1>
-      <p>Sou um desenvolvedor, possuo conhecimentos sobre diversas áreas e procura sempre aprimora-las e amplifica-las</p>
-      
+      <p>Sou um desenvolvedor sem foramações, possuo conhecimentos sobre diversas áreas e procuro sempre aprimora-las e amplifica-las<br>Atualmente estou com 17 anos.</p>
     </div>
   </section>
-
-  <section id="services" class="services">
-    <h2>Serviços</h2>
-    <div class="service-container">
-      <div class="service-card">
-        <h3>(em Desenvolvimento)</h3>
-      </div>
-      <div class="service-card">
-        <h3>(em Desenvolvimento)</h3>
-      </div>
-      <div class="service-card">
-        <h3>(em Desenvolvimento)</h3>
-      </div>
+  <section id="redes" class="redes">
+    <div>
+      <h2>Minhas redes</h2>
+      <a href="https://www.instagram.com/_guihmts_/"><img src="https://skillicons.dev/icons?i=instagram&theme=dark"></a>
+      <a href="https://github.com/Guimts16"><img src="https://skillicons.dev/icons?i=github&theme=dark" alt=""></a>
+      <a href="https://discord.com/users/617362818299199498"><img src="https://skillicons.dev/icons?i=discord&theme=dark" alt=""></a>
+      <a href="https://x.com/Guimts16?t=NQaxxYlJc3mefQ3FCpoEUQ&s=09"><img src="https://skillicons.dev/icons?i=twitter&theme=dark"></a>
+      <a href="https://www.linkedin.com/in/guimts-souza-42b941338/"><img src="https://skillicons.dev/icons?i=linkedin&theme=dark" alt=""></a>
+      <a href="https://www.youtube.com/@guimtsm"><img src="https://cdn-icons-png.freepik.com/256/15707/15707874.png?semt=ais_hybrid" alt=""></a>
     </div>
   </section>
 
   <section id="projects" class="projects">
-    <h2>Projetos Recentes (em Desenvolvimento)</h2>
-  
+    <h2>Projetos Recentes</h2>
+    <div class="project-craft" onmouseover="virado(this)">
+      <a href="https://github.com/Guimts16/ApiMinecraftNicks"><img src="https://static.wikia.nocookie.net/logopedia/images/0/0f/Minecraft_Bedrock_2023.svg/revision/latest/scale-to-width-down/250?cb=20230920113315"></a>
+      <h3>API Minecraft</h3>
+    </div>
   </section>
 
   <section id="skills" class="skills">
     <h2>Habilidades</h2>
     <div class="skill-list">
       <img src="https://skillicons.dev/icons?i=js,html,css,react,py,mysql,mongodb,discordjs,arduino" />
-
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <h2>Entre em Contato</h2>
-    <p>Estou disponível para novos projetos e colaborações. Entre em contato!</p>
-    <a href="mailto:mtsguilherme991@gmail.com" class="cta-button">Enviar E-mail</a>
+    <h2>Contato</h2>
+    <a href="https://discord.com/users/617362818299199498" class="cta-button">Discord</a>
     <img src="https://lanyard.kyrie25.me/api/617362818299199498?imgStyle=square&imgBorderRadius=500px">
   </section>
 
   <footer>
     <p>&copy; 2024 Guimts. Todos os direitos reservados.</p>
   </footer>
+  </div>
 </body>
 </html>

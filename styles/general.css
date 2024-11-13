@@ -75,32 +75,20 @@ body {
 .cta-button:hover {
   background: #c63e17;
 }
-
-.services {
+.redes {
   padding: 2em 1em;
   text-align: center;
 }
-
-.services h2 {
+.redes img {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+}
+.redes h2 {
   font-size: 2em;
   margin-bottom: 1em;
   color: white
 
-}
-
-.service-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  justify-content: center;
-}
-
-.service-card {
-  width: 200px;
-  padding: 1em;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .projects {
@@ -132,6 +120,28 @@ body {
 .project-card img {
   width: 100%;
   height: auto;
+}
+.projects {
+  display: grid; 
+  place-items: center;
+}
+.project-craft {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  width: 150px;
+  transition: transform 1s;
+}
+
+.project-craft img {
+  height: 69px;
+  border-radius: 10%;
+  transition: transform 1s;
+}
+
+.project-craft.virado {
+  transform: rotateY(360deg);
 }
 
 .skills {
@@ -172,12 +182,23 @@ body {
 }
 
 .contact a.cta-button {
-  color: #333;
-  background: #ff5733;
+  background-color: #7289da;
+  border: 2px solid #7289da;
+  color: #fff;
+  display: inline-block;
+  font-family: Whitney, "Open Sans", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 11pt;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 45px;
+  width: 250px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(10px);
 }
 
 .contact img {
-  transform: translate(50%, -60%);
+  transform: translate(35%, -160%);
   position: absolute;
 }
 
@@ -187,4 +208,61 @@ footer {
   padding: 1em 0;
   text-align: center;
   font-size: 0.9em;
+}
+
+/* Cell*/
+@media (max-width: 768px) {
+  .navbar ul {
+    visibility: hidden;
+    width: 0px;
+
+  }
+
+  .navbar li {
+    margin: 0.5em 0;
+  }
+
+  .intro {
+    padding: 1em;
+  }
+
+  .intro img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .intro-text h1 {
+    font-size: 2em;
+  }
+
+  .intro-text p {
+    font-size: 1em;
+  }
+
+  .redes h2,
+  .projects h2,
+  .skills h2,
+  .contact h2 {
+    font-size: 1.5em;
+  }
+
+  .project-craft {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  .skill-list img {
+    width: 85%;
+  }
+  .contact a.cta-button {
+    width: 100%;
+  }
+
+  .contact img {
+    visibility: hidden;
+    width: 0px;
+  }
+
+  footer {
+    font-size: 0.8em;
+  }
 }
