@@ -126,8 +126,6 @@ body {
     gap: 1em;
     margin-top: 1em;
 }
-/* Ajustes para dispositivos móveis */
-/* Estilização geral para dispositivos móveis */
 @media (max-width: 768px) {
     .container {
         padding: 1em;
@@ -136,12 +134,12 @@ body {
     .home img {
         width: 150px;
         height: 150px;
-        margin: 0 auto; /* Centraliza a imagem */
+        margin: 0 auto;
     }
     
     .navbar a {
-        font-size: 0.9em; /* Ajusta o tamanho do texto dos links */
-        padding: 8px; /* Ajusta o espaçamento dos links */
+        font-size: 0.9em; 
+        padding: 8px;
     }
 }
 
