@@ -8,12 +8,31 @@
     <title>Meus Bots - Guimts</title>
 </head>
 <body>
+    <div class="snow-container"></div>
+
     <script>
     function virar(element) {
       element.classList.toggle('virado');
     }   
+    function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.textContent = '❄';
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Duração entre 2s e 5s
+        snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+
+        document.querySelector('.snow-container').appendChild(snowflake);
+
+        setTimeout(() => {
+          snowflake.remove();
+        }, 5000);
+    }
+    setInterval(createSnowflake, 200);
+
     </script>
     <div class="container">
+
         <nav class="navbar">
             <a href="../index.html">Voltar</a>
         </nav>
@@ -22,7 +41,7 @@
             <h1>DISCORD BOTS</h1>
             <h2>Caso queira encomendar um bot personalizado, basta entrar em contato comigo pelo discord.</h1>
             <picture class="divider" src="https://64.media.tumblr.com/2fb42ec2b553c930de019a3d16d69888/10a0300627f4e0f7-3a/s1280x1920/568fd205e9b45b6e6368c426183f3b28ee3d425c.gif">
-            <h3>Este são alguns dos bots no qual eu fiz, projetos privados não será possivel de acessar, porém, ficará como expositivo. Clique no card para exibir as informações.</h3>
+            <h3>Estes são alguns bots que fiz, projetos privados não serão possíveis de serem acessados, porém, ficarão como amostra para visualização. Clique no card para exibir as informações.</h3>
         </div>
         <div class="cards">
             <section class="athena-card">
@@ -44,7 +63,7 @@
                     </div>
                     <div class="face tras">
                         <h2>TDAH</h2>
-                        <p>O bot TDAH (JS) foi dedicado à minhas clã. Criado não apenas para moderação, mas também para usos internos.<br><strong><a href="https://github.com/Guimts16/TdahBot">ACESSAR</a></strong></p>
+                        <p>O bot TDAH (JS) foi dedicado à minha clã. Criado não apenas para moderação, mas também para usos internos.<br><strong><a href="https://github.com/Guimts16/TdahBot">ACESSAR</a></strong></p>
                     </div>
                 </div>
             </section>

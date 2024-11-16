@@ -17,10 +17,10 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-image: url('../assets/back.gif');
+  background: #10101A;
 }
 .navbar a {
-  animation: fadeInAnimation ease 3s;
+  animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   text-decoration: none;
@@ -31,7 +31,7 @@ body {
 
 }
 .container {
-  animation: fadeInAnimation ease 3s;
+  animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   max-width: 1200px;
@@ -44,6 +44,36 @@ body {
     align-items: center;
     color: #fff;
     text-align: center;
+}
+
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: #ffffff;
+  font-size: 1em;
+  opacity: 0.8;
+  animation: fall linear;
 }
 .home img {
     display: flex;

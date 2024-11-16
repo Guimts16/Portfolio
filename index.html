@@ -10,9 +10,27 @@
     function virado(element) {
       element.classList.toggle('virado');
     }    
+    function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.textContent = '❄';
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Duração entre 2s e 5s
+        snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+
+        document.querySelector('.snow-container').appendChild(snowflake);
+
+        setTimeout(() => {
+          snowflake.remove();
+        }, 5000);
+    }
+    setInterval(createSnowflake, 200);
+
   </script>
 </head>
 <body>
+  <div class="snow-container"></div>
+
   <nav class="navbar">
     <ul>
       <li><a href="#home">Início</a></li>
