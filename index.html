@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio - Guimts</title>
   <link rel="stylesheet" href="./styles/general.css">
+  <link rel="shortcut icon" type="image/jpg" href="assets/icons/home.png"/>
   <script>
     function virado(element) {
       element.classList.toggle('virado');
@@ -12,14 +13,13 @@
   </script>
 </head>
 <body>
-  <div class="container">
-
   <nav class="navbar">
     <ul>
       <li><a href="#home">Início</a></li>
       <li><a href="#projects">Projetos</a></li>
       <li><a href="#skills">Habilidades</a></li>
       <li><a href="#contact">Contato</a></li>
+      <li><a href="bots/index.html">Bots</a></li>
     </ul>
   </nav>
 
@@ -46,9 +46,15 @@
 
   <section id="projects" class="projects">
     <h2>Projetos Recentes</h2>
-    <div class="project-craft" onmouseover="virado(this)">
-      <a href="https://github.com/Guimts16/ApiMinecraftNicks"><img src="assets/minecraft.png"></a>
-      <h3>API Minecraft</h3>
+    <div id="projs" class="projs">
+      <div class="project-craft" onmouseover="virado(this)">
+        <a href="https://github.com/Guimts16/ApiMinecraftNicks"><img src="assets/minecraft.png"></a>
+        <h3>API Minecraft</h3>
+      </div>
+      <div class="project-discord">
+        <a href="bots/index.html"><img src="assets/discord.gif"></a>
+        <h3>Discord Bots</h3>
+      </div>
     </div>
   </section>
 

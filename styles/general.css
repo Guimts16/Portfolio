@@ -202,7 +202,21 @@ body {
 .project-craft.virado {
   transform: rotateY(360deg);
 }
+.project-discord {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 1s;
+  transform: translate(165px,-125px);
 
+}
+.project-discord img {
+  height: 69px;
+}
 .skills {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
@@ -285,13 +299,8 @@ footer {
     width: 0px;
 
   }
-
-  .navbar li {
-    margin: 0.5em 0;
-  }
-
   .intro {
-    padding: 1em;
+    padding: 0.1em;
   }
 
   .intro img {
@@ -300,7 +309,7 @@ footer {
   }
 
   .intro-text h1 {
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .intro-text p {
@@ -324,7 +333,13 @@ footer {
   .contact a.cta-button {
     width: 100%;
   }
-
+  .discord {
+    visibility: hidden;
+    width: 0px;
+  }
+  .project-discord {
+    transform: translate(0px,0px);
+  }
   .contact img {
     visibility: hidden;
     width: 0px;

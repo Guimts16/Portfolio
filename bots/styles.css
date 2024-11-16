@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  }
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-image: url('../assets/back.gif');
+}
+.navbar a {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+.container {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+}
+.home h1, .home h3, .home h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+.home img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #ffffff;
+    margin-left: 42%;
+}
+.divider {
+    width: 90%;
+    height: 100%;
+
+}
+.card {
+    border: 5% solid #313338;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    background-color: #313338;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1em;
+    width: 300px;
+    height: 295px;
+    perspective: 1000px;
+}
+
+.card img {
+    border-radius: 5%;
+    width: 100%;
+    height: auto;
+}
+
+.card .face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+}
+
+.card .frente {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card .tras {
+    transform: rotateY(180deg);
+    background-color: #313338;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card .tras p {
+    margin: 10px;
+    color: white;
+    text-align: center;
+}
+.card .tras h2 {
+    display: flex;
+    color: white;   
+}
+.card.virado .frente {
+    transform: rotateY(180deg);
+}
+
+.card.virado .tras {
+    transform: rotateY(0deg);
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+/* Ajustes para dispositivos móveis */
+/* Estilização geral para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+        padding: 1em;
+    }
+    
+    .home img {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto; /* Centraliza a imagem */
+    }
+    
+    .navbar a {
+        font-size: 0.9em; /* Ajusta o tamanho do texto dos links */
+        padding: 8px; /* Ajusta o espaçamento dos links */
+    }
+}
+
