@@ -1,97 +1,136 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio - Guimts</title>
-  <link rel="stylesheet" href="./styles/general.css">
-  <link rel="shortcut icon" type="image/jpg" href="assets/icons/home.png"/>
+  <title>Portfolio - Guimts</title>
+  <link rel="stylesheet" href="./general.css">
+  <link rel="shortcut icon" type="image/jpg" href="assets/icons/home.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <script>
     function virado(element) {
       element.classList.toggle('virado');
-    }    
+    }
     function createSnowflake() {
-        const snowflake = document.createElement('div');
-        snowflake.classList.add('snowflake');
-        snowflake.textContent = '❄';
-        snowflake.style.left = `${Math.random() * 100}vw`;
-        snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Duração entre 2s e 5s
-        snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      snowflake.textContent = '❄';
+      snowflake.style.left = `${Math.random() * 100}vw`;
+      snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+      snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
 
-        document.querySelector('.snow-container').appendChild(snowflake);
+      document.querySelector('.snow-container').appendChild(snowflake);
 
-        setTimeout(() => {
-          snowflake.remove();
-        }, 5000);
+      setTimeout(() => {
+        snowflake.remove();
+      }, 5000);
     }
     setInterval(createSnowflake, 200);
 
   </script>
 </head>
+
 <body>
   <div class="snow-container"></div>
 
   <nav class="navbar">
     <ul>
-      <li><a href="#home">Início</a></li>
-      <li><a href="#projects">Projetos</a></li>
-      <li><a href="#skills">Habilidades</a></li>
-      <li><a href="#contact">Contato</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
       <li><a href="bots/index.html">Bots</a></li>
     </ul>
   </nav>
 
   <section id="home" class="intro">
     <div class="intro-text">
-      <img src="https://media1.tenor.com/m/yKqSufoIOHYAAAAd/cat-black-cat.gif">
-      <h1>Bem-vindo(a), meu nome é Guilherme</h1>
-      <p>Sou um desenvolvedor sem formações, possuo conhecimentos sobre diversas áreas e procuro sempre aprimorá-las e amplifica-las de maneira autônoma<br>Atualmente estou com 17 anos e tenho um curso técnico em logística do Senac, e encerro meu ensino médio em 2024.</p>
+      <img
+        src="https://cdn.discordapp.com/attachments/1324158358990753887/1355992483003236442/Screenshot_20250330_164932_WhatsApp.jpg?ex=67eaf1e9&is=67e9a069&hm=81b517c53b43245f28dab4af6ee9ac3f5105c5c79fb6930d522c076d854d77db&"
+        alt="Profile Picture">
+      <h1>Welcome, my name is <span style="color: #b80000;">Guilherme</span></h1>
+      <p>Hello, my name is Guilherme, I am 18 years old. I am a novice developer in the field! I am cur
+        rently a faculty
+        member at Fatec SP, a course in systems analysis and development</p>
     </div>
   </section>
-  <img class="discord" src="https://lanyard.kyrie25.me/api/617362818299199498?imgStyle=square&imgBorderRadius=500px">
 
   <section id="redes" class="redes">
     <div>
-      <h2>Minhas redes</h2>
+      <h2>Connect with Me</h2>
       <a href="https://www.instagram.com/_guihmts_/"><img src="https://skillicons.dev/icons?i=instagram&theme=dark"></a>
       <a href="https://github.com/Guimts16"><img src="https://skillicons.dev/icons?i=github&theme=dark" alt=""></a>
-      <a href="https://discord.com/users/617362818299199498"><img src="https://skillicons.dev/icons?i=discord&theme=dark" alt=""></a>
-      <a href="https://x.com/Guimts16?t=NQaxxYlJc3mefQ3FCpoEUQ&s=09"><img src="https://skillicons.dev/icons?i=twitter&theme=dark"></a>
-      <a href="https://www.linkedin.com/in/guimts-souza-42b941338/"><img src="https://skillicons.dev/icons?i=linkedin&theme=dark" alt=""></a>
-      <a href="https://www.youtube.com/@guimtsm"><img src="https://cdn-icons-png.freepik.com/256/15707/15707874.png?semt=ais_hybrid" alt=""></a>
+      <a href="https://discord.com/users/617362818299199498"><img
+          src="https://skillicons.dev/icons?i=discord&theme=dark" alt=""></a>
+      <a href="https://x.com/Guimts16?t=NQaxxYlJc3mefQ3FCpoEUQ&s=09"><img
+          src="https://skillicons.dev/icons?i=twitter&theme=dark"></a>
+      <a href="https://www.linkedin.com/in/guimts-souza-42b941338/"><img
+          src="https://skillicons.dev/icons?i=linkedin&theme=dark" alt=""></a>
+      <a href="https://www.youtube.com/@guimtsm"><img
+          src="https://cdn-icons-png.freepik.com/256/15707/15707874.png?semt=ais_hybrid" alt=""></a>
     </div>
   </section>
 
   <section id="projects" class="projects">
-    <h2>Projetos Recentes</h2>
+    <h2>Recent Projects</h2>
     <div id="projs" class="projs">
-      <div class="project-craft" onmouseover="virado(this)">
-        <a href="https://github.com/Guimts16/ApiMinecraftNicks"><img src="assets/minecraft.png"></a>
-        <h3>API Minecraft</h3>
+      <div class="project-card">
+        <a href="https://github.com/Guimts16/ApiMinecraftNicks">
+          <img src="assets/minecraft.png" alt="Minecraft Nicks API">
+          <h3>Minecraft Nicks API</h3>
+          <p>search for 3-letter nicks using the mojang API</p>
+        </a>
       </div>
-      <div class="project-discord">
-        <a href="bots/index.html"><img src="assets/discord.gif"></a>
-        <h3>Discord Bots</h3>
+      <div class="project-card">
+        <a href="bots/index.html">
+          <img src="assets/discord.gif" alt="Discord Bots">
+          <h3>Discord Bots</h3>
+          <p>Custom bots for Discord with moderation and utility features.</p>
+        </a>
+      </div>
+      <div class="project-card">
+        <a href="sites/index.html">
+          <img src="https://cdn3d.iconscout.com/3d/premium/thumb/html-logotipo-12257395-9983392.png?f=webp"
+            alt="My Sites">
+          <h3>My Sites</h3>
+          <p>Collection of websites I have developed showcasing my skills.</p>
+        </a>
       </div>
     </div>
   </section>
 
   <section id="skills" class="skills">
-    <h2>Habilidades</h2>
-    <div class="skill-list">
-      <img src="https://skillicons.dev/icons?i=js,html,css,react,py,mysql,mongodb,discordjs,arduino" />
+    <h2>Skills</h2>
+    <div class="skill-list"></div>
+    <img src="https://skillicons.dev/icons?i=js,html,css,react,py,mysql,mongodb,discordjs,arduino" />
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <h2>Contato</h2>
-    <a href="mailto:mtsguilherme991@gmail.com" class="cta-button">Email</a>
-    <a href="https://discord.com/users/617362818299199498" class="cta-button">Discord</a>
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out to me through any of the platforms below:</p>
+    <div class="contact-options">
+      <a href="mailto:mtsguilherme991@gmail.com" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon">
+        <span>Email</span>
+      </a>
+      <a href="https://discord.com/users/617362818299199498" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Icon">
+        <span>Discord</span>
+      </a>
+      <a href="https://www.linkedin.com/in/guimts-souza-42b941338/" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon">
+        <span>LinkedIn</span>
+      </a>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2024 Guimts. Todos os direitos reservados.</p>
+    <p>&copy; 2024 Guimts. All rights reserved.</p>
   </footer>
   </div>
 </body>
+
 </html>

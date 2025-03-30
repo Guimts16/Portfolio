@@ -4,49 +4,70 @@
   box-sizing: border-box;
 
 }
+
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
 }
+
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: rgb(253, 253, 253) }
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: rgb(253, 253, 253)
+  }
 }
 
 @keyframes fadeInAnimation {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
 
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
+
 @keyframes fall {
   0% {
     transform: translateY(0);
     opacity: 1;
   }
+
   100% {
     transform: translateY(100vh);
     opacity: 0;
   }
 }
+
 @keyframes shardAnimation {
   0% {
     transform: scale(0) rotate(0deg);
     opacity: 1;
   }
+
   100% {
     transform: scale(1) rotate(360deg);
     opacity: 0;
   }
 }
+
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: #10101A;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  color: #f5f5f5;
+  background: linear-gradient(135deg, #10101A, #1a1a2e);
+  margin: 0;
+  padding: 0;
 }
 
 .snow-container {
@@ -69,6 +90,7 @@ body {
   opacity: 0.8;
   animation: fall linear;
 }
+
 .navbar {
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
@@ -76,7 +98,8 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(#333, 0.8);
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   padding: 1em;
   z-index: 1000;
   text-align: center;
@@ -92,13 +115,17 @@ body {
 }
 
 .navbar a {
-  color: #fff;
+  color: #ff5733;
+  padding: 0.8em 1.2em;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
   text-decoration: none;
   font-weight: bold;
 }
 
 .navbar a:hover {
-  color: #7e0000;
+  background: #ff5733;
+  color: #fff;
 }
 
 
@@ -125,19 +152,21 @@ body {
   color: #fff;
   text-align: center;
 }
+
 .intro-text img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   margin-bottom: 1em;
 }
+
 .intro-text h1 {
   overflow: hidden;
-  border-right: .15em solid rgb(255, 255, 255); 
+  border-right: .15em solid rgb(255, 255, 255);
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: .15em;
-  animation: 
+  animation:
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
   font-size: 3em;
@@ -158,9 +187,13 @@ body {
   color: #000000;
   border-radius: 5px;
   text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: transform 0.3s;
 }
 
 .cta-button:hover {
+  transform: scale(1.1);
   background: #c63e17;
 }
 
@@ -171,23 +204,26 @@ body {
   padding: 2em 1em;
   text-align: center;
 }
+
 .redes img {
   width: 45px;
   height: 45px;
   border-radius: 10px;
 }
+
 .redes h2 {
   font-size: 2em;
   margin-bottom: 1em;
   color: white
-
 }
+
 .discord {
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   margin-left: 35%;
 }
+
 .projects {
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
@@ -214,26 +250,56 @@ body {
 }
 
 .project-card {
-  animation: fadeInAnimation ease 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  width: 300px;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #1a1a2e, #313338);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 280px;
+  padding: 1em;
 }
 
 .project-card img {
   width: 100%;
   height: auto;
+  border-radius: 8px;
+  margin-bottom: 1em;
 }
+
+.project-card h3 {
+  font-size: 1.5em;
+  color: #ff5733;
+  margin-bottom: 0.5em;
+}
+
+.project-card p {
+  font-size: 1em;
+  color: #f5f5f5;
+  margin-bottom: 1em;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.projs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  margin-top: 2em;
+}
+
 .projects {
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  display: grid; 
+  display: grid;
   place-items: center;
 }
+
 .project-craft {
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
@@ -255,6 +321,7 @@ body {
 .project-craft.virado {
   transform: rotateY(360deg);
 }
+
 .project-discord {
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
@@ -264,12 +331,14 @@ body {
   padding: 10px;
   border-radius: 8px;
   transition: transform 1s;
-  transform: translate(165px,-125px);
+  transform: translate(165px, -125px);
 
 }
+
 .project-discord img {
   height: 69px;
 }
+
 .skills {
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
@@ -299,50 +368,75 @@ body {
 }
 
 .contact {
-  animation: fadeInAnimation ease 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
   padding: 2em 1em;
   text-align: center;
-  background: #333;
+  background: #1a1a2e;
   color: #fff;
+  border-radius: 10px;
+  margin: 2em auto;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .contact h2 {
   font-size: 2em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
+  color: #ff5733;
 }
 
-.contact a.cta-button {
-  background-color: #7289da;
-  border: 2px solid #7289da;
+.contact p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: #f5f5f5;
+}
+
+.contact-options {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
   color: #fff;
-  display: inline-block;
-  font-family: Whitney, "Open Sans", Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 11pt;
-  border-radius: 3px;
-  cursor: pointer;
-  height: 45px;
-  width: 250px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
-  transform: translateY(-20px);
+  transition: transform 0.3s, background-color 0.3s;
+  padding: 1em;
+  border-radius: 10px;
+  background: #313338;
+  width: 120px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.contact img {
-  transform: translate(35%, -160%);
-  position: absolute;
+.contact-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5em;
+}
+
+.contact-item span {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.contact-item:hover {
+  transform: scale(1.1);
+  background: #ff5733;
+  color: #10101A;
 }
 
 footer {
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  background: #222;
-  color: #ccc;
-  padding: 1em 0;
+  background: #1a1a2e;
+  color: #bbb;
+  font-size: 0.85em;
+  padding: 1.5em 0;
   text-align: center;
-  font-size: 0.9em;
 }
 
 /* Cell*/
@@ -352,6 +446,7 @@ footer {
     width: 0px;
 
   }
+
   .intro {
     padding: 0.1em;
   }
@@ -380,19 +475,24 @@ footer {
     width: 100%;
     margin-bottom: 1em;
   }
+
   .skill-list img {
     width: 85%;
   }
+
   .contact a.cta-button {
     width: 100%;
   }
+
   .discord {
     visibility: hidden;
     width: 0px;
   }
+
   .project-discord {
-    transform: translate(0px,0px);
+    transform: translate(0px, 0px);
   }
+
   .contact img {
     visibility: hidden;
     width: 0px;

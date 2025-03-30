@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" type="image/jpg" href="../assets/icons/dc.png"/>
-    <title>Meus Bots - Guimts</title>
+    <link rel="shortcut icon" type="image/jpg" href="../assets/icons/dc.png" />
+    <title>My Bots - Guimts</title>
 </head>
+
 <body>
     <div class="snow-container"></div>
 
     <script>
-    function virar(element) {
-      element.classList.toggle('virado');
-    }   
-    function createSnowflake() {
-        const snowflake = document.createElement('div');
-        snowflake.classList.add('snowflake');
-        snowflake.textContent = '❄';
-        snowflake.style.left = `${Math.random() * 100}vw`;
-        snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Duração entre 2s e 5s
-        snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+        function virar(element) {
+            element.classList.toggle('virado');
+        }
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+            snowflake.style.left = `${Math.random() * 100}vw`;
+            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
 
-        document.querySelector('.snow-container').appendChild(snowflake);
+            document.querySelector('.snow-container').appendChild(snowflake);
 
-        setTimeout(() => {
-          snowflake.remove();
-        }, 5000);
-    }
-    setInterval(createSnowflake, 200);
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+        setInterval(createSnowflake, 200);
 
     </script>
     <div class="container">
-
         <nav class="navbar">
-            <a href="../index.html">Voltar</a>
+            <button class="back" onclick="window.location.href='../index.html'">Back</button>
         </nav>
         <div class="home">
             <img class="logo" src="https://media1.tenor.com/m/yKqSufoIOHYAAAAd/cat-black-cat.gif">
             <h1>DISCORD BOTS</h1>
-            <h2>Caso queira encomendar um bot personalizado, basta entrar em contato comigo pelo discord.</h1>
-            <picture class="divider" src="https://64.media.tumblr.com/2fb42ec2b553c930de019a3d16d69888/10a0300627f4e0f7-3a/s1280x1920/568fd205e9b45b6e6368c426183f3b28ee3d425c.gif">
-            <h3>Estes são alguns bots que fiz, projetos privados não serão possíveis de serem acessados, porém, ficarão como amostra para visualização. Clique no card para exibir as informações.</h3>
+            <h2>If you want to order a custom bot, just contact me on Discord.</h2>
+            <picture class="divider"
+                src="https://64.media.tumblr.com/2fb42ec2b553c930de019a3d16d69888/10a0300627f4e0f7-3a/s1280x1920/568fd205e9b45b6e6368c426183f3b28ee3d425c.gif">
+                <h3>These are some bots I made. Private projects cannot be accessed, but they will remain as samples for
+                    viewing. Click on the card to display the information.</h3>
         </div>
         <div class="cards">
             <section class="athena-card">
                 <div class="card" onmousedown="virar(this)">
                     <div class="face frente">
-                        <img src="https://cdn.discordapp.com/avatars/1207008367932084275/d5e990d25c6325f91d2d43bcc7533d82.png?size=256">    
+                        <img
+                            src="https://cdn.discordapp.com/avatars/1207008367932084275/d5e990d25c6325f91d2d43bcc7533d82.png?size=256">
                     </div>
                     <div class="face tras">
                         <h2>ATHENA</h2>
-                        <p>Athena (JS), foi um Bot dedicado à moderação do servidor SpartaMC, não seguido em frente por mim.<br><strong>PRIVADO</strong></strong></p>
+                        <p>Athena (JS) was a bot dedicated to moderating the SpartaMC server, not continued by
+                            me.<br><strong>PRIVATE</strong></p>
+                    </div>
+
+                </div>
+            </section>
+            <section class="oldmine-card">
+                <div class="card" onmousedown="virar(this)">
+                    <div class="face frente">
+                        <img src="../assets/cow-face.webp">
+                    </div>
+                    <div class="face tras">
+                        <h2>OldMineStore</h2>
+                        <p>OldMineStore (JS) was a bot dedicated to sell minecraft accounts in discord
+                            server.<br><strong>PRIVATE</strong></p>
                     </div>
 
                 </div>
@@ -59,48 +77,61 @@
             <section class="tdah-card">
                 <div class="card" onmousedown="virar(this)">
                     <div class="face frente">
-                        <img src="https://cdn.discordapp.com/icons/1206750376695701604/a8f4a16d1f58f4709e7e93027776c4f9.png?size=256">    
+                        <img src="../assets/dc1d59ff7a89a45a2df79211a4feff7f.png">
                     </div>
                     <div class="face tras">
                         <h2>TDAH</h2>
-                        <p>O bot TDAH (JS) foi dedicado à minha clã. Criado não apenas para moderação, mas também para usos internos.<br><strong><a href="https://github.com/Guimts16/TdahBot">ACESSAR</a></strong></p>
+                        <p>The TDAH bot (JS) was dedicated to my clan. Created not only for moderation but also for
+                            internal uses.<br><strong><a href="https://github.com/Guimts16/TdahBot">ACCESS</a></strong>
+                        </p>
                     </div>
                 </div>
             </section>
             <section class="py-card">
                 <div class="card" onmousedown="virar(this)">
                     <div class="face frente">
-                        <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png">    
+                        <img
+                            src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png">
                     </div>
                     <div class="face tras">
                         <h2>Python Bot</h2>
-                        <p>Este foi meu primeiro projeto de Python no Discord. Contendo mais de 1000 linhas de código, resolvi liberar para que seja visto por qualquer um. O bot tem diversas funções, mas mantem a linha padrão e muito mais.<br><strong><a href="https://github.com/Guimts16/Discord-Py-Bot">ACESSAR</a></strong></p>
+                        <p>This was my first Python project on Discord. Containing more than 1000 lines of code, I
+                            decided to make it available for anyone to see. The bot has several functions but maintains
+                            the standard line and much more.<br><strong><a
+                                    href="https://github.com/Guimts16/Discord-Py-Bot">ACCESS</a></strong></p>
                     </div>
                 </div>
             </section>
             <section class="moon-card">
                 <div class="card" onmousedown="virar(this)">
                     <div class="face frente">
-                        <img src="https://cdn.discordapp.com/avatars/1249870208731054080/3f921a3a3e805ac98c33973369f04f4b.png?size=256">    
+                        <img
+                            src="https://cdn.discordapp.com/avatars/1249870208731054080/3f921a3a3e805ac98c33973369f04f4b.png?size=256">
                     </div>
                     <div class="face tras">
                         <h2>MoonMTS</h2>
-                        <p>O MoonMTS (JS) veio através da ideia de criar uma comunidade no Discord, porém, foi descontinuado, por motivos pessoais. O bot conta com comandos básicos como /perfil, /ajuda e etc., e também com comandos de moderação mais otimizados e bem trabalhados<br><strong><a href="https://github.com/Guimts16/MoonMTS-Discord-JS">ACESSAR</a></strong></p>
+                        <p>MoonMTS (JS) came from the idea of creating a community on Discord, but it was discontinued
+                            for personal reasons. The bot has basic commands like /profile, /help, etc., and also more
+                            optimized and well-developed moderation commands.<br><strong><a
+                                    href="https://github.com/Guimts16/MoonMTS-Discord-JS">ACCESS</a></strong></p>
                     </div>
                 </div>
             </section>
             <section class="ticket-card">
                 <div class="card" onmousedown="virar(this)">
                     <div class="face frente">
-                        <img src="../assets/ticket.png">    
+                        <img src="../assets/ticket.png">
                     </div>
                     <div class="face tras">
                         <h2>Ticket Bot</h2>
-                        <p>O TicketBot (JS) tem as funções de ticket configuravel, para quem está procurando um bot de ticket gratuito e simples, esse pode ser uma ótima opção!<br><strong><a href="https://github.com/Guimts16/TicketBot">ACESSAR</a></strong></p>
+                        <p>The TicketBot (JS) has configurable ticket functions. For those looking for a free and simple
+                            ticket bot, this can be a great option!<br><strong><a
+                                    href="https://github.com/Guimts16/TicketBot">ACCESS</a></strong></p>
                     </div>
                 </div>
             </section>
         </div>
 
-</body> 
+</body>
+
 </html>
