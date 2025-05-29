@@ -8,13 +8,6 @@
   --transition: 0.3s ease;
 }
 
-[data-theme="light"] {
-  --bg-color: #f5f5f5;
-  --text-color: #222;
-  --accent-color: #e63946;
-  --accent-light: rgba(230, 57, 70, 0.1);
-}
-
 *,
 *::before,
 *::after {
@@ -32,13 +25,17 @@ body {
   line-height: 1.6;
   transition: background var(--transition), color var(--transition);
   scroll-behavior: smooth;
-  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=82238'), auto;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
   color: var(--accent-color);
 }
 
+/* Navbar geral */
 nav {
   position: sticky;
   top: 0;
@@ -51,6 +48,7 @@ nav {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+/* Links da navbar */
 .nav-links {
   list-style: none;
   display: flex;
@@ -60,6 +58,8 @@ nav {
 .nav-links a {
   font-weight: 600;
   position: relative;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 .nav-links a::after {
@@ -77,14 +77,107 @@ nav {
   width: 100%;
 }
 
-.theme-toggle {
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: transform 0.3s;
+.nav-links a:hover {
+  color: var(--accent-color);
 }
 
-.theme-toggle:hover {
-  transform: rotate(20deg);
+/* Exibe o botão em telas menores */
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: var(--bg-color);
+    transform: translateY(-200%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    padding: 1rem 0;
+    gap: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .nav-links {
+    text-align: center;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+}
+
+/* Estilo do seletor de idioma */
+.language-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-toggle input {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background: var(--accent-color);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-circle {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #fff;
+}
+
+.icon-pt {
+  left: 10px;
+}
+
+.icon-en {
+  right: 10px;
+}
+
+input:checked+.toggle {
+  background: #4caf50;
+}
+
+input:checked+.toggle .toggle-circle {
+  transform: translateX(30px);
 }
 
 header {
@@ -139,6 +232,102 @@ h2 {
   display: inline-block;
   border-bottom: 3px solid var(--accent-color);
   margin-bottom: 1.5rem;
+}
+
+/* Estilo para a grade principal */
+#faculs .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Estilo para o container principal */
+#faculs {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Estilo para o sub-grid */
+.sub-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Estilo para os itens do sub-grid */
+.sub-grid-item {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sub-grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.sub-grid-item h3 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.sub-grid-item h4 {
+  font-size: 1.4rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.sub-grid-item p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.progress-container {
+  margin-top: 1rem;
+}
+
+.progress-container label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar .progress {
+  height: 100%;
+  background: var(--accent-color);
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-container p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* Coloca atrás do conteúdo */
 }
 
 #about .grid {
@@ -298,6 +487,7 @@ h2 {
 
 .filter-controls button {
   margin: 0 0.5rem;
+  color: #fff;
   padding: 0.5rem 1rem;
   background: var(--accent-light);
   border: none;
@@ -309,7 +499,7 @@ h2 {
 .filter-controls button.active,
 .filter-controls button:hover {
   background: var(--accent-color);
-  color: #fff;
+  color: #ffffff;
   transform: scale(1.05);
 }
 
@@ -399,35 +589,6 @@ h2 {
   border-radius: 0.5rem;
 }
 
-#livecoding textarea {
-  width: 100%;
-  height: 200px;
-  background: #222;
-  color: #e5e5e5;
-  border: none;
-  padding: 0.5rem;
-  font-family: monospace;
-  border-radius: 0.3rem;
-  margin-bottom: 1rem;
-}
-
-#livecoding iframe {
-  width: 100%;
-  height: 300px;
-  border: 2px solid var(--accent-color);
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-}
-
-.run-btn {
-  padding: 0.5rem 1rem;
-  background: var(--accent-color);
-  color: #fff;
-  border: none;
-  border-radius: 0.3rem;
-  cursor: pointer;
-}
-
 #contact form {
   max-width: 600px;
   margin: auto;
@@ -463,6 +624,104 @@ footer {
   text-align: center;
   padding: 2rem 0;
   color: var(--accent-light);
+}
+
+/* Remove a caixa de seleção */
+.language-toggle input {
+  display: none;
+}
+
+/* Estilo do botão */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background: var(--accent-color);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Círculo deslizante */
+.toggle-circle {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #fff;
+}
+
+.icon-pt {
+  left: 10px;
+}
+
+.icon-en {
+  right: 10px;
+}
+
+input:checked+.toggle {
+  background: #4caf50;
+}
+
+input:checked+.toggle .toggle-circle {
+  transform: translateX(30px);
+}
+
+/* Estilo para o container da barra de progresso */
+.progress-container {
+  margin-top: 1rem;
+}
+
+.progress-container label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar .progress {
+  height: 100%;
+  background: var(--accent-color);
+  width: 0;
+  /* Atualize dinamicamente no JavaScript */
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-container p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+
 }
 
 @keyframes float {
@@ -586,4 +845,21 @@ footer {
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
+}
+
+/* Estilo para o botão mailto */
+.btn-mailto {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.btn-mailto:hover {
+  background-color: #45a049;
 }

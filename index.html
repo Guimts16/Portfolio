@@ -13,29 +13,37 @@
 
 <body data-theme="dark">
   <nav data-aos="fade-down">
-    <div class="logo"><a href="#home">Guimts</a></div>
+    <div class="logo">Guimts</a></div>
+
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">Sobre</a></li>
-      <li><a href="#skills">Habilidades</a></li>
-      <li><a href="#projects">Projetos</a></li>
-      <li><a href="#github">GitHub</a></li>
-      <li><a href="#livecoding">Live Coding</a></li>
-      <li><a href="#contact">Contato</a></li>
+      <li><a href="#home" data-translate="Navhome">Início</a></li>
+      <li><a href="#about" data-translate="Navabout">Sobre</a></li>
+      <li><a href="#skills" data-translate="Navskills">Habilidades</a></li>
+      <li><a href="#projects" data-translate="Navprojects">Projetos</a></li>
+      <li><a href="#github" data-translate="Navgithub">GitHub</a></li>
+      <li><a href="#contact" data-translate="Navcontact">Contato</a></li>
     </ul>
     <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+    <div class="language-toggle">
+      <input type="checkbox" id="languageSwitch" />
+      <label for="languageSwitch" class="toggle">
+        <span class="toggle-circle"></span>
+        <span class="icon icon-pt">🇧🇷</span>
+        <span class="icon icon-en">🇺🇸</span>
+      </label>
+    </div>
   </nav>
 
   <header id="home">
+    <div id="particles-js"></div>
     <div class="hero-content" data-aos="zoom-in" data-aos-delay="200">
-      <h1>Olá, eu sou o Guilherme</h1>
-      <p>Desenvolvedor de JavaScript, Python e React</p>
-      <button class="btn" onclick="document.getElementById('github').scrollIntoView()">Ver Projetos</button>
+      <h1 data-translate="greeting">Olá, eu sou o Guilherme</h1>
+      <p data-translate="description">Desenvolvedor de JavaScript, Python e React</p>
     </div>
   </header>
 
   <section id="about" class="container">
-    <h2 data-aos="fade-up">Sobre Mim</h2>
+    <h2 data-aos="fade-up" data-translate="about">Sobre Mim</h2>
     <div class="grid">
       <div data-aos="fade-right" data-aos-delay="100">
         <p>Oi! Eu sou o Guilherme, apaixonado por tecnologia e movido por desafios. Desenvolvo soluções com JavaScript,
@@ -47,9 +55,26 @@
       </div>
     </div>
   </section>
-
+  <section id="faculs" class="container">
+    <h2 data-aos="fade-up" data-translate="faculs">Faculdade</h2>
+    <div class="sub-grid-item" data-aos="fade-up" data-aos-delay="100">
+      <h3>Fatec</h3>
+      <p>Faculdade de Tecnologia de São Paulo</p>
+      <h4>Curso</h4>
+      <p>Análise e Desenvolvimento de Sistemas</p>
+      <p>Estou atualmente cursando Análise e Desenvolvimento de Sistemas na Fatec, onde estou
+        aprimorando minhas habilidades em programação e desenvolvimento de software.</p>
+      <div class="progress-container">
+        <label for="progress">Progresso do Curso:</label>
+        <div class="progress-bar">
+          <div class="progress" style="width: 10%;"></div>
+        </div>
+        <p>1º Semestre de 6</p>
+      </div>
+    </div>
+  </section>
   <section id="skills" class="container">
-    <h2 data-aos="fade-up">Habilidades</h2>
+    <h2 data-aos="fade-up" data-translate="skills">Habilidades</h2>
     <div class="skills">
       <div data-aos="slide-up" data-aos-delay="100">
         <div class="skill-label">JavaScript <span>90%</span></div>
@@ -83,7 +108,7 @@
 
 
   <section id="projects" class="container" data-aos="fade-up">
-    <h2 data-aos="fade-up">Projetos</h2>
+    <h2 data-aos="fade-up" data-translate="projects">Projetos</h2>
     <div class="filter-controls" data-aos="fade-up" data-aos-delay="100">
       <button class="active" data-filter="all">Todos</button>
       <button data-filter="web">Web</button>
@@ -121,28 +146,18 @@
   </section>
 
   <section id="github" class="container">
-    <h2 data-aos="fade-up">Repositórios do GitHub</h2>
+    <h2 data-aos="fade-up" data-translate="github">Repositórios do GitHub</h2>
     <div class="repos-grid" id="repos" data-aos="fade-up" data-aos-delay="100"></div>
   </section>
 
-  <section id="livecoding" class="container" data-aos="zoom-in" data-aos-delay="200">
-    <h2>Live Coding</h2>
-    <div class="editor">
-      <textarea id="htmlCode" placeholder="HTML"></textarea>
-      <textarea id="cssCode" placeholder="CSS"></textarea>
-    </div>
-    <textarea id="jsCode" placeholder="JavaScript"></textarea>
-    <button class="run-btn" onclick="runCode()">Executar</button>
-    <iframe id="preview"></iframe>
-  </section>
 
   <section id="contact" class="container">
-    <h2 data-aos="fade-up">Contato</h2>
+    <h2 data-aos="fade-up" data-translate="contact">Contato</h2>
     <form id="contactForm" data-aos="fade-up" data-aos-delay="100">
-      <input type="text" name="name" placeholder="Seu Nome" required />
-      <input type="email" name="email" placeholder="Seu Email" required />
-      <textarea name="message" rows="5" placeholder="Sua Mensagem" required></textarea>
-      <button type="submit">Enviar</button>
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+      <button type="submit" data-translate="sendButton">Enviar</button>
     </form>
   </section>
 
@@ -154,11 +169,108 @@
   <script>
     AOS.init({
       duration: 800,
-      once: true
+      once: true,
     });
-  </script>
 
-  <script>
+    const translations = {
+      pt: {
+        Navhome: "Início",
+        Navabout: "Sobre",
+        Navskills: "Habilidades",
+        Navprojects: "Projetos",
+        Navgithub: "Repositórios do GitHub",
+        Navcontact: "Contato",
+        greeting: "Olá, eu sou o Guilherme",
+        description: "Desenvolvedor de JavaScript, Python e React",
+        about: "Sobre Mim",
+        aboutText: "Oi! Eu sou o Guilherme, apaixonado por tecnologia e movido por desafios. Desenvolvo soluções com JavaScript, React e Python, e adoro transformar ideias em experiências digitais de qualidade. Gosto de trabalhar em equipe, aprender coisas novas e entregar projetos que realmente façam a diferença.",
+        faculs: "Faculdade",
+        fatec: "Fatec",
+        fatecDescription: "Faculdade de Tecnologia de São Paulo",
+        course: "Curso",
+        courseName: "Análise e Desenvolvimento de Sistemas",
+        mySpeech: "Estou atualmente cursando Análise e Desenvolvimento de Sistemas na Fatec, onde estou aprimorando minhas habilidades em programação e desenvolvimento de software.",
+        progressLabel: "Progresso do Curso:",
+        progressText: "1º Semestre de 6",
+        contact: "Contato",
+        sendButton: "Enviar",
+        contactMessage: "Obrigado pelo contato!",
+      },
+      en: {
+        Navhome: "Home",
+        Navabout: "About",
+        Navskills: "Skills",
+        Navprojects: "Projects",
+        Navgithub: "GitHub Repositories",
+        Navcontact: "Contact",
+        greeting: "Hello, I am Guilherme",
+        description: "JavaScript, Python, and React Developer",
+        about: "About Me",
+        aboutText: "Hi! I'm Guilherme, a technology enthusiast driven by challenges. I develop solutions using JavaScript, React, and Python, and I love turning ideas into high-quality digital experiences. I enjoy teamwork, learning new things, and delivering projects that truly make a difference.",
+        faculs: "Education",
+        fatec: "Fatec",
+        fatecDescription: "São Paulo Technology College",
+        course: "Course",
+        courseName: "Systems Analysis and Development",
+        mySpeech: "I am currently studying Systems Analysis and Development at Fatec, where I am improving my skills in programming and software development.",
+        progressLabel: "Course Progress:",
+        progressText: "1st Semester of 6",
+        contact: "Contact",
+        sendButton: "Send",
+        contactMessage: "Thank you for reaching out!",
+      },
+    };
+
+    const languageSwitch = document.getElementById("languageSwitch");
+
+    languageSwitch.addEventListener("change", () => {
+      const currentLanguage = languageSwitch.checked ? "pt" : "en";
+      translatePage(currentLanguage);
+    });
+
+    function translatePage(language) {
+      const elementsToTranslate = [
+        { selector: "nav ul li:nth-child(1) a", key: "Navhome" },
+        { selector: "nav ul li:nth-child(2) a", key: "Navabout" },
+        { selector: "nav ul li:nth-child(3) a", key: "Navskills" },
+        { selector: "nav ul li:nth-child(4) a", key: "Navprojects" },
+        { selector: "nav ul li:nth-child(5) a", key: "Navgithub" },
+        { selector: "nav ul li:nth-child(6) a", key: "NavliveCoding" },
+        { selector: "nav ul li:nth-child(7) a", key: "Navcontact" },
+        { selector: "header h1", key: "greeting" },
+        { selector: "header p", key: "description" },
+        { selector: "#about h2", key: "about" },
+        { selector: "#about p:nth-of-type(1)", key: "aboutText" },
+        { selector: "#skills h2", key: "skills" },
+        { selector: "#projects h2", key: "projects" },
+        { selector: "#github h2", key: "github" },
+        { selector: "#livecoding h2", key: "liveCoding" },
+        { selector: "#faculs h2", key: "faculs" },
+        { selector: "#faculs h3", key: "fatec" },
+        { selector: "#faculs p:nth-of-type(1)", key: "fatecDescription" },
+        { selector: "#faculs h4", key: "course" },
+        { selector: "#faculs p:nth-of-type(2)", key: "courseName" },
+        { selector: "#faculs p:nth-of-type(3)", key: "mySpeech" },
+        { selector: ".progress-container label", key: "progressLabel" },
+        { selector: ".progress-container p", key: "progressText" },
+        { selector: "#contact h2", key: "contact" },
+        { selector: "#contact button", key: "sendButton" },
+      ];
+
+
+      elementsToTranslate.forEach(({ selector, key }) => {
+        const element = document.querySelector(selector);
+        if (element) {
+          element.classList.add("fade");
+          setTimeout(() => {
+            element.textContent = translations[language][key];
+            element.classList.remove("fade");
+            element.classList.add("fade-in");
+            setTimeout(() => element.classList.remove("fade-in"), 500);
+          }, 500);
+        }
+      });
+    }
 
     fetch('https://api.github.com/users/Guimts16/repos?sort=updated&per_page=6')
       .then(res => res.json())
@@ -180,13 +292,6 @@
         });
       });
 
-    function runCode() {
-      const html = document.getElementById('htmlCode').value;
-      const css = '<style>' + document.getElementById('cssCode').value + '</style>';
-      const js = '<script>' + document.getElementById('jsCode').value + '<' + '/script>';
-      document.getElementById('preview').srcdoc = html + css + js;
-    }
-
     document.querySelectorAll('.filter-controls button').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-controls button').forEach(b => b.classList.remove('active'));
@@ -198,10 +303,49 @@
       });
     });
 
-    document.getElementById('contactForm').addEventListener('submit', e => {
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
       e.preventDefault();
-      alert('Obrigado pelo contato!');
+      alert(translations[currentLanguage].contactMessage);
       e.target.reset();
+    });
+
+    const totalSemesters = 6;
+    const currentSemester = 1;
+    const progressPercentage = (currentSemester / totalSemesters) * 100;
+    document.querySelector(".progress").style.width = `${progressPercentage}%`;
+    document.querySelector(".progress-container p").textContent = `${currentSemester}º Semestre de ${totalSemesters}`;
+
+    translatePage('en');
+  </script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: {
+          type: "circle",
+          stroke: { width: 0, color: "#000000" },
+          polygon: { nb_sides: 5 },
+        },
+        opacity: { value: 0.5, random: false },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true,
+        },
+        modes: {
+          repulse: { distance: 100, duration: 0.4 },
+          push: { particles_nb: 4 },
+        },
+      },
+      retina_detect: true,
     });
   </script>
 </body>
