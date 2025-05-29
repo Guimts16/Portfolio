@@ -1,134 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Guimts</title>
-  <link rel="stylesheet" href="./general.css">
-  <link rel="shortcut icon" type="image/jpg" href="assets/icons/home.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <script>
-    function virado(element) {
-      element.classList.toggle('virado');
-    }
-    function createSnowflake() {
-      const snowflake = document.createElement('div');
-      snowflake.classList.add('snowflake');
-      snowflake.textContent = '❄';
-      snowflake.style.left = `${Math.random() * 100}vw`;
-      snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
-      snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
-
-      document.querySelector('.snow-container').appendChild(snowflake);
-
-      setTimeout(() => {
-        snowflake.remove();
-      }, 5000);
-    }
-    setInterval(createSnowflake, 200);
-
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MTS - Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="general.css" />
 </head>
 
-<body>
-  <div class="snow-container"></div>
-
-  <nav class="navbar">
-    <ul>
+<body data-theme="dark">
+  <nav data-aos="fade-down">
+    <div class="logo"><a href="#home">Guimts</a></div>
+    <ul class="nav-links">
       <li><a href="#home">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="bots/index.html">Bots</a></li>
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#skills">Habilidades</a></li>
+      <li><a href="#projects">Projetos</a></li>
+      <li><a href="#github">GitHub</a></li>
+      <li><a href="#livecoding">Live Coding</a></li>
+      <li><a href="#contact">Contato</a></li>
     </ul>
+    <div class="theme-toggle"><i class="fas fa-moon"></i></div>
   </nav>
 
-  <section id="home" class="intro">
-    <div class="intro-text">
-      <img class="profile-picture" src="./assets/eu.jpg" alt="Profile Picture">
-      <h1>Welcome, my name is <span style="color: #b80000;">Guilherme</span></h1>
-      <p>Hello, my name is Guilherme, I am 18 years old. I am a student developer in the field! I am cur
-        rently a faculty
-        member at Fatec SP, a course in systems analysis and development</p>
+  <header id="home">
+    <div class="hero-content" data-aos="zoom-in" data-aos-delay="200">
+      <h1>Olá, eu sou o Guilherme</h1>
+      <p>Desenvolvedor de JavaScript, Python e React</p>
+      <button class="btn" onclick="document.getElementById('github').scrollIntoView()">Ver Projetos</button>
     </div>
-  </section>
+  </header>
 
-  <section id="redes" class="redes">
-    <div>
-      <h2>Connect with Me</h2>
-      <a href="https://www.instagram.com/_guihmts_/"><img src="https://skillicons.dev/icons?i=instagram&theme=dark"></a>
-      <a href="https://github.com/Guimts16"><img src="https://skillicons.dev/icons?i=github&theme=dark" alt=""></a>
-      <a href="https://discord.com/users/617362818299199498"><img
-          src="https://skillicons.dev/icons?i=discord&theme=dark" alt=""></a>
-      <a href="https://x.com/Guimts16?t=NQaxxYlJc3mefQ3FCpoEUQ&s=09"><img
-          src="https://skillicons.dev/icons?i=twitter&theme=dark"></a>
-      <a href="https://www.linkedin.com/in/guimts-souza-42b941338/"><img
-          src="https://skillicons.dev/icons?i=linkedin&theme=dark" alt=""></a>
-      <a href="https://www.youtube.com/@guimtsm"><img
-          src="https://cdn-icons-png.freepik.com/256/15707/15707874.png?semt=ais_hybrid" alt=""></a>
-    </div>
-  </section>
-
-  <section id="projects" class="projects">
-    <h2>Recent Projects</h2>
-    <div id="projs" class="projs">
-      <div class="project-card">
-        <a href="https://github.com/Guimts16/ApiMinecraftNicks">
-          <img src="assets/minecraft.png" alt="Minecraft Nicks API">
-          <h3>Minecraft Nicks API</h3>
-          <p>search for 3-letter nicks using the mojang API</p>
-        </a>
+  <section id="about" class="container">
+    <h2 data-aos="fade-up">Sobre Mim</h2>
+    <div class="grid">
+      <div data-aos="fade-right" data-aos-delay="100">
+        <p>Oi! Eu sou o Guilherme, apaixonado por tecnologia e movido por desafios. Desenvolvo soluções com JavaScript,
+          React e Python, e adoro transformar ideias em experiências digitais de qualidade. Gosto de trabalhar em
+          equipe, aprender coisas novas e entregar projetos que realmente façam a diferença.</p>
       </div>
-      <div class="project-card">
-        <a href="bots/index.html">
-          <img src="assets/discord.gif" alt="Discord Bots">
-          <h3>Discord Bots</h3>
-          <p>Custom bots for Discord with moderation and utility features.</p>
-        </a>
-      </div>
-      <div class="project-card">
-        <a href="sites/index.html">
-          <img src="https://cdn3d.iconscout.com/3d/premium/thumb/html-logotipo-12257395-9983392.png?f=webp"
-            alt="My Sites">
-          <h3>My Sites</h3>
-          <p>Collection of websites I have developed showcasing my skills.</p>
-        </a>
+      <div data-aos="fade-left" data-aos-delay="200">
+        <img src="./assets/me.png" alt="Foto de Perfil">
       </div>
     </div>
   </section>
 
-  <section id="skills" class="skills">
-    <h2>Skills</h2>
-    <div class="skill-list"></div>
-    <img src="https://skillicons.dev/icons?i=js,html,css,react,py,mysql,mongodb,discordjs,arduino" />
+  <section id="skills" class="container">
+    <h2 data-aos="fade-up">Habilidades</h2>
+    <div class="skills">
+      <div data-aos="slide-up" data-aos-delay="100">
+        <div class="skill-label">JavaScript <span>90%</span></div>
+        <div class="skill-bar" style="--skill-level:90%;"><span></span></div>
+      </div>
+      <div data-aos="slide-up" data-aos-delay="200">
+        <div class="skill-label">Python <span>85%</span></div>
+        <div class="skill-bar" style="--skill-level:85%;"><span></span></div>
+      </div>
+      <div data-aos="slide-up" data-aos-delay="300">
+        <div class="skill-label">React <span>50%</span></div>
+        <div class="skill-bar" style="--skill-level:50%;"><span></span></div>
+      </div>
+      <div data-aos="slide-up" data-aos-delay="400">
+        <div class="skill-label">HTML/CSS <span>95%</span></div>
+        <div class="skill-bar" style="--skill-level:95%;"><span></span></div>
+      </div>
+      <div data-aos="slide-up" data-aos-delay="500">
+        <div class="skill-label">Discord.js <span>90%</span></div>
+        <div class="skill-bar" style="--skill-level:90%;"><span></span></div>
+      </div>
+      <div data-aos="slide-up" data-aos-delay="600">
+        <div class="skill-label">Node.js <span>80%</span></div>
+        <div class="skill-bar" style="--skill-level:80%;"><span></span></div>
+      </div>
+      <div data-aos="slide-up" data-aos-delay="700">
+        <div class="skill-label">MySQL <span>40%</span></div>
+        <div class="skill-bar" style="--skill-level:40%;"><span></span></div>
+      </div>
+  </section>
+
+
+  <section id="projects" class="container" data-aos="fade-up">
+    <h2 data-aos="fade-up">Projetos</h2>
+    <div class="filter-controls" data-aos="fade-up" data-aos-delay="100">
+      <button class="active" data-filter="all">Todos</button>
+      <button data-filter="web">Web</button>
+      <button data-filter="discord">Discord</button>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card" data-category="web" data-aos="flip-left" data-aos-delay="200">
+        <img src="assets/minestore.png" alt="Projeto 1">
+        <div class="card-content">
+          <h3>OldMineStore</h3>
+          <p>HTML, Loja de Vendas</p>
+        </div>
+      </div>
+      <div class="project-card" data-category="web" data-aos="flip-left" data-aos-delay="300">
+        <img src="./assets/portifolio.png" alt="Projeto 2">
+        <div class="card-content">
+          <h3>Portfólio</h3>
+          <p>HTML, CSS, JavaScript.</p>
+        </div>
+      </div>
+      <div class="project-card" data-category="discord" data-aos="flip-left" data-aos-delay="400">
+        <img src="assets/oldmine.png" alt="Projeto 3">
+        <div class="card-content">
+          <h3>OldMineStore</h3>
+          <p>Discord.js, Bot Geral</p>
+        </div>
+      </div>
+      <div class="project-card" data-category="discord" data-aos="flip-left" data-aos-delay="500">
+        <div class="card-content">
+          <h3>Sales Bot</h3>
+          <p>Discord.js, Bot de ticket e vendas</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out to me through any of the platforms below:</p>
-    <div class="contact-options">
-      <a href="mailto:mtsguilherme991@gmail.com" class="contact-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon">
-        <span>Email</span>
-      </a>
-      <a href="https://discord.com/users/617362818299199498" class="contact-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Icon">
-        <span>Discord</span>
-      </a>
-      <a href="https://www.linkedin.com/in/guimts-souza-42b941338/" class="contact-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon">
-        <span>LinkedIn</span>
-      </a>
-    </div>
+  <section id="github" class="container">
+    <h2 data-aos="fade-up">Repositórios do GitHub</h2>
+    <div class="repos-grid" id="repos" data-aos="fade-up" data-aos-delay="100"></div>
   </section>
 
-  <footer>
-    <p>&copy; 2024 Guimts. All rights reserved.</p>
+  <section id="livecoding" class="container" data-aos="zoom-in" data-aos-delay="200">
+    <h2>Live Coding</h2>
+    <div class="editor">
+      <textarea id="htmlCode" placeholder="HTML"></textarea>
+      <textarea id="cssCode" placeholder="CSS"></textarea>
+    </div>
+    <textarea id="jsCode" placeholder="JavaScript"></textarea>
+    <button class="run-btn" onclick="runCode()">Executar</button>
+    <iframe id="preview"></iframe>
+  </section>
+
+  <section id="contact" class="container">
+    <h2 data-aos="fade-up">Contato</h2>
+    <form id="contactForm" data-aos="fade-up" data-aos-delay="100">
+      <input type="text" name="name" placeholder="Seu Nome" required />
+      <input type="email" name="email" placeholder="Seu Email" required />
+      <textarea name="message" rows="5" placeholder="Sua Mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer data-aos="fade-up" data-aos-delay="200">
+    &copy; 2025 Guilherme · <a href="https://github.com/Guimts16" target="_blank">GitHub</a>
   </footer>
-  </div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+
+  <script>
+
+    fetch('https://api.github.com/users/Guimts16/repos?sort=updated&per_page=6')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('repos');
+        data.forEach(repo => {
+          const card = document.createElement('div');
+          card.className = 'repo-card';
+          card.setAttribute('data-aos', 'fade-up');
+          card.innerHTML = `
+        <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
+        <div class="repo-meta">
+          <span><i class="fas fa-code"></i> ${repo.language || 'N/A'}</span>
+          <span><i class="fas fa-star"></i>⭐ ${repo.stargazers_count}</span>
+          <span><i class="fas fa-code-branch"></i>👥 ${repo.forks_count}</span>
+        </div>
+      `;
+          container.appendChild(card);
+        });
+      });
+
+    function runCode() {
+      const html = document.getElementById('htmlCode').value;
+      const css = '<style>' + document.getElementById('cssCode').value + '</style>';
+      const js = '<script>' + document.getElementById('jsCode').value + '<' + '/script>';
+      document.getElementById('preview').srcdoc = html + css + js;
+    }
+
+    document.querySelectorAll('.filter-controls button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-controls button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.project-card').forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+        });
+      });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Obrigado pelo contato!');
+      e.target.reset();
+    });
+  </script>
 </body>
 
 </html>
